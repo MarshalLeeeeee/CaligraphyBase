@@ -60,12 +60,14 @@ def getCali(path,target,char,cnt):
 
 
 if __name__ == '__main__':
-	author = sys.argv[1]
+	authors = sys.argv[1:]
 	path = '..\demo'
 	#getCali(path,author)
 	with open('../characters/simple.txt', 'r', encoding='utf-8') as f:
 		char = f.read().split()
 	#getCali(path,author,char[0],0)
-	for i in range(len(char)):
-		getCali(path,author,char[i],i+1)
-		print('character ', i+1,' is over...')
+	for author in authors:
+		print(author, ' starts ......')
+		for i in range(len(char)):
+			getCali(path,author,char[i],i+1)
+			print('character ', i+1,' is over...')
